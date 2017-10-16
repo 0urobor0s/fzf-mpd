@@ -4,9 +4,8 @@
 
 ## Demo
 
-[![asciicast](https://asciinema.org/a/FpQd0sZuOXTOB5c2fdanFvsVL.png)](https://asciinema.org/a/FpQd0sZuOXTOB5c2fdanFvsVL)
+<!-- [![asciicast](https://asciinema.org/a/FpQd0sZuOXTOB5c2fdanFvsVL.png)](https://asciinema.org/a/FpQd0sZuOXTOB5c2fdanFvsVL) -->
 ![](./demo.gif)
-![](./demo.mp4)
 
 ## Requirements
 
