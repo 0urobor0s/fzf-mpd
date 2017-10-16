@@ -1,6 +1,6 @@
 # Introduction
 
-`fzf-mpd` is a zsh script that allows you to control [mpd](https://www.musicpd.org/) using [fzf](https://github.com/junegunn/fzf) an awesome command-line fuzzy finder.
+`fzf-mpd` is a zsh plugin that allows you to control [mpd](https://www.musicpd.org/) using [fzf](https://github.com/junegunn/fzf) an awesome command-line fuzzy finder.
 
 ## Demo
 
