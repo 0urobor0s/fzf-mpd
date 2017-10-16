@@ -5,6 +5,7 @@
 ## Demo
 
 [![asciicast](https://asciinema.org/a/FpQd0sZuOXTOB5c2fdanFvsVL.png)](https://asciinema.org/a/FpQd0sZuOXTOB5c2fdanFvsVL)
+![](./demo.gif)
 
 ## Requirements
 
