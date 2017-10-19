@@ -26,7 +26,11 @@ Otherwise, copy the [fzf-mpd script](https://raw.githubusercontent.com/piotryord
 
 ## Usage
 
-`> fm`
+`fm`
+
+You can also pass custom `mpc` commands directly with the `fm` command:
+
+`fm -q -h 192.156.2.3 -p 55500`
 
 ## Global Launch (Mac only)
 
