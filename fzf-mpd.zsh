@@ -1,6 +1,9 @@
 # MPD FTW
 # This function will invoke a meny that lets you select What kind of search you wish to do.
 # It's an easy shortcut for the other methods, in case you're lazy to type them ;)
+fzf=fzf
+preview="id3info ~/Music/{}"
+
 fm() {
   local list
   list=$(echo 'Any' && echo 'Genre' && echo 'Artist' && echo 'Albums' && echo 'Clear Playlist')
@@ -8,7 +11,7 @@ fm() {
   echo $list > /tmp/fileTypes
 
   type=$(cat /tmp/fileTypes | \
-    fzf-tmux --query="" --reverse --select-1 --exit-0 ) || return 1
+      $fzf --query="" --reverse --select-1 --exit-0 --preview=$preview) || return 1
   case `echo $type` in
     'Genre') fmg ${@};;
     'Artist') fmaa ${@};;
@@ -23,7 +26,7 @@ fm() {
 fms() {
   local song
   song=$(mpc ${@} search any "" | \
-    fzf-tmux --query="$1" --reverse --select-1 --exit-0) || return 1
+      $fzf --query="$1" --reverse --select-1 --exit-0 --preview=$preview) || return 1
   mpc ${@} clear;
   [ -n "$song" ] && mpc ${@} add """$song"""; mpc ${@} play; mpc ${@} next
   echo $FMOPTS
@@ -34,7 +37,7 @@ fms() {
 fmg() {
   local genre
   genre=$(mpc ${@} list genre | \
-    fzf-tmux --query="$1" --reverse --select-1 --exit-0) || return 1
+      $fzf --query="$1" --reverse --select-1 --exit-0 --preview='') || return 1
   mpc ${@} clear;
   [ -n "$genre" ] && mpc ${@} search genre $genre | mpc ${@} insert; mpc ${@} play
   fm
@@ -44,7 +47,7 @@ fmg() {
 fmaa() {
   local artist
   artist=$(mpc ${@} list artist | \
-    fzf-tmux --query="$1" --reverse --select-1 --exit-0) || return 1
+      $fzf --query="$1" --reverse --select-1 --exit-0 --preview='') || return 1
   mpc ${@} clear;
   [ -n "$artist" ] && mpc ${@} search artist $artist | mpc ${@} insert; mpc ${@} play
   fm
@@ -54,7 +57,7 @@ fmaa() {
 fma() {
   local albums
   album=$(mpc ${@} list album | \
-    fzf-tmux --query="$1" --reverse --select-1 --exit-0) || return 1
+      $fzf --query="$1" --reverse --select-1 --exit-0 --preivew='') || return 1
   mpc ${@} clear;
   [ -n "$album" ] && mpc ${@} search album $album | mpc ${@} insert; mpc ${@} play
   fm
