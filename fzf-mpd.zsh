@@ -57,7 +57,7 @@ fmaa() {
 fma() {
   local albums
   album=$(mpc ${@} list album | \
-      $fzf --query="$1" --reverse --select-1 --exit-0 --preivew='') || return 1
+      $fzf --query="$1" --reverse --select-1 --exit-0 --preview='') || return 1
   mpc ${@} clear;
   [ -n "$album" ] && mpc ${@} search album $album | mpc ${@} insert; mpc ${@} play
   fm
