@@ -11,6 +11,7 @@
 
 - [zsh](http://www.zsh.org/)
 - [mpc](https://musicpd.org/clients/mpc/)
+- [id3lib](http://id3lib.sourceforge.net/)
 
 ## Installation
 
@@ -21,7 +22,7 @@ antigen bundle piotryordanov/fzf-mpd
 antigen apply
 ```
 
-Otherwise, copy the [fzf-mpd script](https://raw.githubusercontent.com/piotryordanov/fzf-mpd/master/fzf-mpd.zsh) into your zsh.after director
+Otherwise, copy the [fzf-mpd script](https://raw.githubusercontent.com/0urobor0s/fzf-mpd/master/fzf-mpd.zsh) into your zsh.after director
 
 
 ## Usage
