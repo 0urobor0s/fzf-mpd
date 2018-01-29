@@ -2,7 +2,7 @@
 # This function will invoke a meny that lets you select What kind of search you wish to do.
 # It's an easy shortcut for the other methods, in case you're lazy to type them ;)
 fzf=fzf
-preview="id3info ~/Music/{}"
+preview="cat ~/.mpd/mpd.conf | grep "music_directory" | sed -e 's/.*"\(.*\)".*/\1/' | xargs id3info {}"
 
 fm() {
   local list
